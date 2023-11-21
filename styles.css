@@ -17,22 +17,39 @@ body {
     font-family: var(--primary-font);
 }
 
+
 nav {
     height: 5rem;
     padding-top: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
-    justify-content: space-between;
     border-bottom: 1px solid var(--secondary-color-light);
+    justify-content: space-between;
 }
 
 nav ul {
     list-style: none;
 }
 
-#top-nav {
-    display: none;
+
+#top-nav-collapsible {
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--secondary-color-light);
+    text-align: center;
 }
+
+#top-nav-collapsible li {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#top-nav-collapsible a {
+    color: var(--secondary-color);
+}
+
 
 #hamburger {
     padding: .5rem;
@@ -53,6 +70,7 @@ nav ul {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 #primary-logo {
@@ -75,3 +93,9 @@ footer {
     display: flex;
     align-items: center;
 }
+
+.hidden {
+    display: none;
+}
+
+
