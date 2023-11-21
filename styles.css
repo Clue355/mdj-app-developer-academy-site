@@ -1,0 +1,50 @@
+:root {
+    --primary-font: Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--primary-font);
+}
+
+nav {
+    height: 5rem;
+    padding-top: 1rem;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#primary-logo {
+    height: 5rem;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    justify-content: center;
+    height: 5rem;
+}
+
+
+/* helper classes */
+
+.flex-ctr {
+    display: flex;
+    align-items: center;
+}
