@@ -1,12 +1,18 @@
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import MobileNav from "@/page_components/mobile_nav";
+import NavModal from "@/page_components/mobile_nav_modal";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+    const [isClicked, setIsClicked] = useState(false);
+    const handleButtonClick = () => {
+        setIsClicked(!isClicked);
+    };
     return (
         <>
             <Head>
@@ -16,20 +22,25 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={`${styles.main} ${inter.className}`}>
-                <MobileNav />
+                <NavModal isClicked={isClicked} handleClick={handleButtonClick} />
+                <MobileNav isClicked={isClicked} handleClick={handleButtonClick} />
                 <nav className={styles.navbar}>
-                    <img src="/mdj-main-logo-white.svg" />
-                    <ul className={`${styles.list_parent}`}>
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                        <li>
-                            <a href="#academy">The Academy</a>
-                        </li>
-                    </ul>
+                    <div className={styles.div_parent}>
+                        <div className={styles.img_parent}>
+                            <img src="/mdj-main-logo-white.svg" />
+                        </div>
+                        <ul className={`${styles.list_parent}`}>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#academy">The Academy</a>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
 
                 {/* <!-- banner_section --> */}
@@ -150,7 +161,7 @@ export default function Home() {
                                     placeholder="Enter your message"
                                 ></textarea>
 
-                                <input type="submit" value="Submit" />
+                                <input type="submit" value="Submit" className={styles.submit_button} />
                             </form>
                         </div>
                         {/* <!-- socials --> */}

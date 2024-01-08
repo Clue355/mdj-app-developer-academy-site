@@ -7,11 +7,13 @@
 .navbar > img {
     height: auto;
     width: 3rem;
+    z-index: 10;
 }
 
 /* menu button */
 
 #mobile_button {
+    z-index: 10;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -27,7 +29,7 @@
     width: 25px;
     height: 3px;
     background-color: black;
-    border-radius: 10rem;
+    border-radius: 20rem;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.5s ease-in-out;
 }
 
@@ -45,7 +47,7 @@
 }
 
 .clickedButton > span {
-    background-color: rgb(233, 44, 44) !important;
+    background-color: #000000 !important;
 }
 
 @media (min-width: 768px) {
