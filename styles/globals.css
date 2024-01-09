@@ -44,6 +44,10 @@ html:focus-within {
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Set core body defaults */
 body {
     min-height: 100vh;
@@ -91,6 +95,10 @@ button,
 textarea,
 select {
     font: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 ul,

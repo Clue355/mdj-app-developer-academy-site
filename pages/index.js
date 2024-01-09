@@ -46,14 +46,17 @@ export default function Home() {
                 {/* <!-- banner_section --> */}
                 <section className={styles.banner_section}>
                     <div className={styles.content_div}>
-                        <h1>Your Journey Into Tech Starts Here</h1>
-                        <button>Learn More</button>
+                        <h1>Your Journey Into Tech </h1>
+                        <h1>Starts Here</h1>
+                        <a href="#about">
+                            <button>Learn More</button>
+                        </a>
                     </div>
                 </section>
                 {/* <!-- end banner_section -->
 
         <!-- info_section --> */}
-                <section className={styles.info_section}>
+                <section className={styles.info_section} id="academy">
                     {/* <!-- title and description --> */}
                     <div className={styles.desc}>
                         <h2>App Developer Academy</h2>
@@ -111,7 +114,7 @@ export default function Home() {
                 </section>
                 {/* <!-- end info_section -->
         <!-- about the author section --> */}
-                <section className={styles.about_section}>
+                <section className={styles.about_section} id="about">
                     <div className={styles.about_div}>
                         {/* <!-- image --> */}
                         <div className={styles.about_image}>
@@ -132,7 +135,7 @@ export default function Home() {
                 </section>
                 {/* <!-- end about the author section -->
         <!-- contact section --> */}
-                <section className={styles.contact_section}>
+                <section className={styles.contact_section} id="contact">
                     <div className={styles.contact_div}>
                         {/* <!-- form --> */}
                         <div className={styles.form}>
