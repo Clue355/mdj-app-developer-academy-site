@@ -1,10 +1,13 @@
 import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import MobileNav from "@/page_components/mobile_nav";
-import NavModal from "@/page_components/mobile_nav_modal";
+import MobileNav from "@/components/base/mobile_nav";
+import NavModal from "@/components/base/mobile_nav_modal";
+import ButtonSec from "@/components/ui/buttonSection";
+import ButtonLink from "@/components/ui/buttonLink";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,29 +18,29 @@ export default function Home() {
     };
     return (
         <>
-            <Head>
-                <title>Create Next App</title>
-                <meta name="description" content="App Dev" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
             <main className={`${styles.main} ${inter.className}`}>
                 <NavModal isClicked={isClicked} handleClick={handleButtonClick} />
                 <MobileNav isClicked={isClicked} handleClick={handleButtonClick} />
-                <nav className={styles.navbar}>
+                <nav className={styles.navbar} id="nav">
                     <div className={styles.div_parent}>
                         <div className={styles.img_parent}>
-                            <img src="/mdj-main-logo-white.svg" />
+                            <img src="/mdj-main-logo-white.svg" alt="App Academy Logo." />
                         </div>
                         <ul className={`${styles.list_parent}`}>
                             <li>
-                                <a href="#about">About</a>
+                                <a href="#about" className="better_focus">
+                                    About
+                                </a>
                             </li>
                             <li>
-                                <a href="#contact">Contact</a>
+                                <a href="#contact" className="better_focus">
+                                    Contact
+                                </a>
                             </li>
                             <li>
-                                <a href="#academy">The Academy</a>
+                                <a href="#academy" className="better_focus">
+                                    The Academy
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -46,17 +49,17 @@ export default function Home() {
                 {/* <!-- banner_section --> */}
                 <section className={styles.banner_section}>
                     <div className={styles.content_div}>
-                        <h1>Your Journey Into Tech </h1>
-                        <h1>Starts Here</h1>
+                        <h1>Your Journey Into Tech Starts Here</h1>
+
                         <a href="#about">
-                            <button>Learn More</button>
+                            <button tabIndex="-1">Learn More</button>
                         </a>
                     </div>
                 </section>
                 {/* <!-- end banner_section -->
 
         <!-- info_section --> */}
-                <section className={styles.info_section} id="academy">
+                <section className={styles.info_section} id="academy" tabIndex="0">
                     {/* <!-- title and description --> */}
                     <div className={styles.desc}>
                         <h2>App Developer Academy</h2>
@@ -75,7 +78,8 @@ export default function Home() {
                         {/* <!-- value add 1 --> */}
                         <div className={styles.value_add}>
                             <div className={styles.value_image}>
-                                <img src="/logo.png" alt="image" />
+                                {/** TODO: descriptive text in alt property needed here in actual image */}
+                                <img src="/logo.png" alt="image." />
                             </div>
                             <h3>Value Add 1</h3>
                             <p>
@@ -86,7 +90,8 @@ export default function Home() {
                         {/* <!-- value add 2 --> */}
                         <div className={styles.value_add}>
                             <div className={styles.value_image}>
-                                <img src="/logo.png" alt="image" />
+                                {/** TODO: descriptive text in alt property needed here in actual image */}
+                                <img src="/logo.png" alt="image." />
                             </div>
                             <h3>Value Add 2</h3>
                             <p>
@@ -97,7 +102,8 @@ export default function Home() {
                         {/* <!-- value add 3 --> */}
                         <div className={styles.value_add}>
                             <div className={styles.value_image}>
-                                <img src="/logo.png" alt="image" />
+                                {/** TODO: descriptive text in alt property needed here in actual image */}
+                                <img src="/logo.png" alt="image." />
                             </div>
                             <h3>Value Add 3</h3>
                             <p>
@@ -109,16 +115,17 @@ export default function Home() {
                     </div>
                     {/* <!-- signup button --> */}
                     <div className={styles.signup}>
-                        <button className={styles.signup_button}>Sign Up to Start Your Journey Today</button>
+                        {/** TODO: add link property with correct link to this button */}
+                        <ButtonLink text="Sign Up to Start Your Journey Today" />
                     </div>
                 </section>
                 {/* <!-- end info_section -->
         <!-- about the author section --> */}
-                <section className={styles.about_section} id="about">
+                <section className={`${styles.about_section} better_focus`} id="about" tabIndex="0">
                     <div className={styles.about_div}>
                         {/* <!-- image --> */}
                         <div className={styles.about_image}>
-                            <img src="/600x600.svg" alt="Photo of Daniel Scott" />
+                            <img src="/600x600.svg" alt="Photo of Daniel Scott." />
                         </div>
                         {/* <!-- info --> */}
                         <div className={styles.info}>
@@ -141,44 +148,64 @@ export default function Home() {
                         <div className={styles.form}>
                             <h4 className={styles.mg_b}>Contact Me</h4>
                             <form action="/submit-your-form" method="post">
-                                <input
-                                    className={`${styles.text_box} ${styles.text_i}`}
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    placeholder="Enter your name"
-                                />
+                                <fieldset className="no_border">
+                                    <legend className="opacity_z no_size">Type in your info to contact me</legend>
+                                    <label className="opacity_z no_size" htmlFor="name">
+                                        Enter your name.
+                                    </label>
+                                    <input
+                                        className={`${styles.text_box} ${styles.text_i} better_focus`}
+                                        type="text"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Enter your name"
+                                    />
 
-                                <input
-                                    className={`${styles.text_box} ${styles.text_i}`}
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="Enter your email"
-                                />
+                                    <label className="opacity_z no_size" htmlFor="email">
+                                        Enter your email.
+                                    </label>
+                                    <input
+                                        className={`${styles.text_box} ${styles.text_i} better_focus`}
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                    />
 
-                                <textarea
-                                    className={`${styles.text_area} ${styles.text_i}`}
-                                    id="message"
-                                    name="message"
-                                    placeholder="Enter your message"
-                                ></textarea>
+                                    <label className="opacity_z no_size" htmlFor="message">
+                                        Enter a message.
+                                    </label>
+                                    <textarea
+                                        className={`${styles.text_area} ${styles.text_i} better_focus`}
+                                        id="message"
+                                        name="message"
+                                        placeholder="Enter your message"
+                                    ></textarea>
 
-                                <input type="submit" value="Submit" className={styles.submit_button} />
+                                    <input
+                                        type="submit"
+                                        value="Submit"
+                                        aria-label="Submit contact form."
+                                        className={`${styles.submit_button} hover better_focus`}
+                                    />
+                                </fieldset>
                             </form>
                         </div>
                         {/* <!-- socials --> */}
                         <div>
                             <h4 className={styles.mg_b}>Follow Me On Social Media</h4>
                             <div className={styles.social_icons}>
-                                <a href="#">
-                                    <img src="/linkedin.svg" alt="linkedin logo" />
+                                <a href="#" className="better_focus">
+                                    {/** TODO: descriptive text in alt property needed here in actual image */}
+                                    <img src="/linkedin.svg" alt="linkedin logo." />
                                 </a>
-                                <a href="#">
-                                    <img src="/linkedin.svg" alt="linkedin logo" />
+                                <a href="#" className="better_focus">
+                                    {/** TODO: descriptive text in alt property needed here in actual image */}
+                                    <img src="/linkedin.svg" alt="linkedin logo." />
                                 </a>
-                                <a href="#">
-                                    <img src="/linkedin.svg" alt="linkedin logo" />
+                                <a href="#" className="better_focus">
+                                    {/** TODO: descriptive text in alt property needed here in actual image */}
+                                    <img src="/linkedin.svg" alt="linkedin logo." />
                                 </a>
                             </div>
                         </div>
@@ -188,7 +215,7 @@ export default function Home() {
         <!-- footer --> */}
                 <footer className={styles.footer_section}>
                     <p>Copyright All Rights Reserved</p>
-                    <button>Back To Top</button>
+                    <ButtonSec text="Back To Top" link="#nav" />
                 </footer>
             </main>
         </>

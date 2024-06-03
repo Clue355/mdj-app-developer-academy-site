@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "@/styles/MobileNavModal.module.css";
+import styles from "./MobileNavModal.module.css";
 
 export default function NavModal({ isClicked, handleClick }) {
     return (

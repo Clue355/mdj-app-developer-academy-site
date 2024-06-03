@@ -5,7 +5,7 @@
     justify-content: center;
     padding: 40px 140px;
     height: max-content;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
 }
 
@@ -24,11 +24,15 @@
     display: flex;
     align-items: center;
     font-weight: 300;
-    color: grey;
+    color: rgb(0, 0, 0);
 }
 
 .list_parent > li {
     margin-left: 48px;
+}
+
+.list_parent > li > a:hover {
+    color: #0034e0;
 }
 
 @media (max-width: 768px) {
@@ -43,6 +47,8 @@
     width: 100%;
     height: 816px;
     background-image: radial-gradient(circle at center, transparent, rgba(0, 0, 0, 1)), url("/background2.png");
+    background-color: rgba(0, 0, 0, 0.35);
+    background-blend-mode: darken;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -60,6 +66,8 @@
     font-size: 5rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    width: 100%;
+    max-width: 60rem;
     text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
 }
 
@@ -69,16 +77,28 @@
     height: 3rem;
     border-radius: 0.2rem;
     border: none;
-    border: 3px solid #fcfcfd;
-    color: #fcfcfd;
-    background-color: #3772ff;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background-color: #0034e0;
 }
 
-.content_div > button:hover {
+.content_div > a:focus {
+    /* gives better tab focus */
+    outline: 5px solid #ffffff;
+    outline-offset: 3px;
+    border-radius: 5px;
+}
+
+.content_div > a > button:hover {
     cursor: pointer;
+    background-color: black;
 }
 
 @media (max-width: 768px) {
+    .content_div > h1 {
+        width: 100%;
+        max-width: 40rem;
+    }
     .banner_section {
         height: 616px;
     }
@@ -403,12 +423,4 @@
     margin-bottom: 1rem;
 }
 
-.footer_section > button {
-    width: max-content;
-    cursor: pointer;
-    padding: 0.2rem;
-    background-color: transparent;
-    border: 2px solid black;
-    border-radius: 5px;
-}
 /* end footer */

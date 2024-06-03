@@ -5,7 +5,7 @@
         "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --foreground-rgb: 255, 255, 255;
         --background-start-rgb: 0, 0, 0;
@@ -28,7 +28,7 @@
         --card-rgb: 100, 100, 100;
         --card-border-rgb: 200, 200, 200;
     }
-}
+} */
 
 /* Box sizing rules */
 *,
@@ -53,7 +53,7 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     font-family: Arial, sans-serif; /* or any default font you prefer */
-    font-size: 16px; /* or whatever base size you prefer */
+    font-size: 1rem; /* or whatever base size you prefer */
     line-height: 1.5;
     background-color: #fcfcfd;
 }
@@ -97,6 +97,14 @@ select {
     font: inherit;
 }
 
+input::placeholder {
+    color: #292929; /* Replace with your desired color */
+}
+
+textarea::placeholder {
+    color: #292929; /* Replace with your desired color */
+}
+
 button {
     cursor: pointer;
 }
@@ -116,3 +124,34 @@ a:hover {
 }
 
 /* end of CSS reset */
+
+/* global styles  */
+
+.hover:hover {
+    background-color: black;
+    color: #fcfcfd;
+}
+
+.no_decor:hover {
+    text-decoration: none;
+}
+
+.no_border {
+    border: none;
+}
+
+.opacity_z {
+    opacity: 0;
+}
+
+.no_size {
+    display: block;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+.better_focus:focus {
+    outline: 3px solid #000000;
+    outline-offset: 3px;
+    border-radius: 5px;
+}

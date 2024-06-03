@@ -1,4 +1,4 @@
-import styles from "@/styles/MobileNav.module.css";
+import styles from "./MobileNav.module.css";
 import { useState } from "react";
 
 export default function MobileNav({ isClicked, handleClick }) {
